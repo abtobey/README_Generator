@@ -1,0 +1,11 @@
+{
+  "title": "ksjdhfdsfhk",
+  "description": "sdlkfhlsdkhf",
+  "install": "lkdhfldkshf",
+  "usage": "sldkflsdkjfl",
+  "contributing": "lskdflksdjf",
+  "tests": "m,dn,mndsf",
+  "license": "choice2",
+  "email": "akjfhkdjfh@gmail.com",
+  "github": "lkjflasdkjf"
+}
