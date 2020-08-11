@@ -38,7 +38,7 @@ const questions = [
           type: "list",
           name: "license",
           message: "License",
-          choices: ["choice1", "choice2", "choice3"]
+          choices: ["MIT", "Apache 2.0", "Mozilla 2.0","BSD 3-Clause","BSD 2-Clause","GNU General Public License"]
       },
       //validate that email contains an @ and a .
       {
@@ -66,32 +66,37 @@ const questions = [
 // }
 inquirer.prompt(questions).then((answers) => {
     console.log(JSON.stringify(answers, null, '  '));
-    let readMeContents=`
-    ## ${answers.title}
+let readMeContents=`
+## ${answers.title}
 
-    # ${answers.description}
+# ${answers.description}
 
-    Table of contents
+Table of contents:
+  * Installation Instructions
+  * Usage Instructions
+  * Contributing
+  * Tests
+  * Contact info
 
-    Installation instructions: ${answers.installation}
+Installation instructions: ${answers.installation}
 
-    Usage: ${answers.usage}
+Usage: ${answers.usage}
 
-    Contributing: ${answers.contributing}
+Contributing: ${answers.contributing}
 
-    Tests: ${answers.tests}
+Tests: ${answers.tests}
 
-    Contact: ${answers.email}
-    ${answers.github}
-    `
-    fs.writeFile("READMEtest.MD", readMeContents, function(err) {
-  
-      if (err) {
-        return console.log(err);
-      }
-    
-      console.log("Success!");
-    
+Contact: ${answers.email}
+${answers.github}
+`
+fs.writeFile("READMEtest.md", readMeContents, function(err) {
+
+if (err) {
+  return console.log(err);
+}
+
+console.log("Success!");
+
     });
   });
 // function to initialize program
