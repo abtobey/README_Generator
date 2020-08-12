@@ -15,12 +15,12 @@ const questions = [
         message: "Give a brief description of your application",
       },
       {
-        type: 'input',
+        type: 'editor',
         name: 'install',
         message: "installation instructions",
       },
       {
-        type: 'input',
+        type: 'editor',
         name: 'usage',
         message: "usage instructions",
       },
@@ -38,7 +38,7 @@ const questions = [
           type: "list",
           name: "license",
           message: "License",
-          choices: ["MIT", "Apache 2.0", "Mozilla 2.0","BSD 3-Clause","BSD 2-Clause","GNU General Public License"]
+          choices: ["MIT", "Apache_2.0", "Mozilla_2.0","BSD_3-Clause","BSD_2-Clause","GNU_General_Public_License"]
       },
       //validate that email contains an @ and a .
       {
@@ -66,29 +66,47 @@ const questions = [
 // }
 inquirer.prompt(questions).then((answers) => {
     console.log(JSON.stringify(answers, null, '  '));
+
 let readMeContents=`
+![GitHub license](https://img.shields.io/badge/license-${answers.license}-blue.svg)
+
 ## ${answers.title}
 
 # ${answers.description}
 
 Table of contents:
-  * Installation Instructions
-  * Usage Instructions
-  * Contributing
-  * Tests
-  * Contact info
+  * [Installation Instructions](#installation-instructions)
+  * [Usage Instructions](#usage)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Contact info](#contact-info)
+---
 
-Installation instructions: ${answers.installation}
+## Installation instructions: 
+${answers.install}
 
-Usage: ${answers.usage}
+---
 
-Contributing: ${answers.contributing}
+## Usage: 
+${answers.usage}
 
-Tests: ${answers.tests}
+---
 
-Contact: ${answers.email}
+## Contributing: 
+${answers.contributing}
+
+---
+
+## Tests:
+ ${answers.tests}
+
+---
+
+## Contact Info: 
+${answers.email}
 ${answers.github}
 `
+
 fs.writeFile("READMEtest.md", readMeContents, function(err) {
 
 if (err) {
