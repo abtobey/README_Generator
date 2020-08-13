@@ -1,6 +1,6 @@
-## README Generator
+# README Generator
 
-# This application generates a formatted README file based on a user's inputs
+## This application generates a formatted README file based on a user's inputs
 
 Table of contents:
   * [Installation Instructions](#installation-instructions)

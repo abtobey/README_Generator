@@ -69,9 +69,9 @@ let licenseString=answers.license.replace(" ", "_")
 let readMeContents=
 `![GitHub license](https://img.shields.io/badge/license-${licenseString}-blue.svg)
 
-## ${answers.title}
+# ${answers.title}
 
-# ${answers.description}
+## ${answers.description}
 
 Table of contents:
   * [Installation Instructions](#installation-instructions)
