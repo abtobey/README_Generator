@@ -14,6 +14,7 @@ const questions = [
         name: 'description',
         message: "Give a brief description of your application",
       },
+      //the next two will open a text editor
       {
         type: 'editor',
         name: 'install',
@@ -38,7 +39,7 @@ const questions = [
           type: "list",
           name: "license",
           message: "License",
-          choices: ["MIT", "Apache_2.0", "Mozilla_2.0","BSD_3-Clause","BSD_2-Clause","GNU_General_Public_License"]
+          choices: ["MIT", "Apache 2.0", "Mozilla 2.0","BSD 3-Clause","BSD 2-Clause","GNU General Public License"]
       },
       //validate that email contains an @ and a .
       {
@@ -60,15 +61,13 @@ const questions = [
 
      
     ];
-
-// function to write README file
-// function writeToFile(fileName, data) {
-// }
+//wait for answers, then write text file
 inquirer.prompt(questions).then((answers) => {
-    console.log(JSON.stringify(answers, null, '  '));
-
-let readMeContents=`
-![GitHub license](https://img.shields.io/badge/license-${answers.license}-blue.svg)
+// console.log(JSON.stringify(answers, null, '  '));
+//replace spaces with underscores so link to image will work
+let licenseString=answers.license.replace(" ", "_")
+let readMeContents=
+`![GitHub license](https://img.shields.io/badge/license-${licenseString}-blue.svg)
 
 ## ${answers.title}
 
@@ -79,6 +78,7 @@ Table of contents:
   * [Usage Instructions](#usage)
   * [Contributing](#contributing)
   * [Tests](#tests)
+  * [License](#license)
   * [Contact info](#contact-info)
 ---
 
@@ -98,16 +98,22 @@ ${answers.contributing}
 ---
 
 ## Tests:
- ${answers.tests}
+${answers.tests}
 
 ---
 
-## Contact Info: 
-${answers.email}
-${answers.github}
+##License:
+
+This project is covered under the ${answers.license} license.
+
+---
+
+## Questions: 
+email: ${answers.email}
+github: ${answers.github}
 `
 
-fs.writeFile("READMEtest.md", readMeContents, function(err) {
+fs.writeFile("generatedREADME.md", readMeContents, function(err) {
 
 if (err) {
   return console.log(err);
@@ -117,13 +123,4 @@ console.log("Success!");
 
     });
   });
-// function to initialize program
-function init() {
-
-}
-
-// function call to initialize program
-init();
-
-
 
