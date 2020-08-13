@@ -24,7 +24,7 @@ Table of contents:
 
 ## Usage: 
 
-![Demonstration](https://youtu.be/YlPGxAX5WmA)
+[Demonstration](https://youtu.be/YlPGxAX5WmA)
 
 -Enter your desired information into the prompts
 
