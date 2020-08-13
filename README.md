@@ -23,7 +23,12 @@ Table of contents:
 ---
 
 ## Usage: 
+
+![Demonstration](https://youtu.be/YlPGxAX5WmA)
+
 -Enter your desired information into the prompts
+
+![Screenshot](https://user-images.githubusercontent.com/65990371/90080585-9b989d80-dcd0-11ea-9846-2c4ddd363b0d.JPG)
 
 -The file will be saved as generatedREADME.txt
 
@@ -34,10 +39,6 @@ Table of contents:
 ## Contributing: 
 email abtobey@gmail.com if you wish to contribute
 
----
-
-## Tests:
-I will put something here later
 
 ---
 
